@@ -4,16 +4,10 @@
 
 	&::before {
 		content: "IV";
-
-		position: absolute;
-		top: 0;
 		left: calc(50% + 555px);
 		transform: translateX(-50%);
+		@include decorNumber;
 		line-height: 1.5;
-
-		opacity: 0.02;
-		font-size: 400px;
-		font-family: $font-accent;
 	}
 }
 

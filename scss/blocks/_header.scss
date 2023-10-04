@@ -15,12 +15,36 @@
 			#242B33 92.19%
 		), 
 		url('./../img/header/header-bg.jpg');
+
+
+	@include mediaTablet {
+		min-height: unset;
+		row-gap: 50px;
+	}
 }
 
 .header__top-row {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.header__top-row--mobile {
+	
+}
+
+.header__nav {
+	@include mediaTablet {
+		display: none;
+	}
+}
+
+.header__nav-btn {
+	display: none;
+
+	@include mediaTablet {
+		display: block;
+	}
 }
 
 .header__title {
@@ -32,6 +56,11 @@
 	font-weight: 700;
 	font-family: $font-accent;
 	color: $accent;
+
+	@include mediaTablet {
+		font-size: 32px;
+		padding-bottom: 100px;
+	}
 }
 
 .header__title-icon {
@@ -45,4 +74,11 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 98px;
+
+	@include mediaTablet {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 30px;
+	}
 }
