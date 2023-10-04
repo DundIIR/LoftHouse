@@ -143,6 +143,11 @@ a:hover {
   color: #D4C17F;
 }
 
+.link-bold {
+  color: #D4C17F;
+  font-weight: 700;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -184,6 +189,7 @@ a:hover {
 
 .nav {
   font-size: 14px;
+  letter-spacing: 0.05em;
 }
 
 .nav__list {
@@ -216,7 +222,19 @@ a:hover {
 }
 
 .benefits {
+  position: relative;
   padding: 120px 0;
+}
+.benefits::after {
+  content: "II";
+  position: absolute;
+  top: 0;
+  left: calc(50% + 555px);
+  transform: translateX(-50%);
+  line-height: 1.2;
+  opacity: 0.02;
+  font-size: 400px;
+  font-family: "Playfair Display", serif;
 }
 
 .benefits__row {
@@ -240,11 +258,26 @@ a:hover {
   font-weight: 300;
 }
 
-.appartments__title {
+.apartments {
+  position: relative;
+}
+.apartments::before {
+  content: "III";
+  position: absolute;
+  top: 0;
+  right: calc(50% + 555px);
+  transform: translateX(50%);
+  line-height: 1;
+  opacity: 0.02;
+  font-size: 400px;
+  font-family: "Playfair Display", serif;
+}
+
+.apartments__title {
   margin-bottom: 88px;
 }
 
-.appartments__cards {
+.apartments__cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
@@ -373,7 +406,19 @@ a:hover {
 }
 
 .video {
+  position: relative;
   text-align: center;
+}
+.video::before {
+  content: "IV";
+  position: absolute;
+  top: 0;
+  left: calc(50% + 555px);
+  transform: translateX(-50%);
+  line-height: 1.5;
+  opacity: 0.02;
+  font-size: 400px;
+  font-family: "Playfair Display", serif;
 }
 
 .video__link {
@@ -409,7 +454,20 @@ a:hover {
 }
 
 .section-map {
+  position: relative;
   padding: 180px 0;
+}
+.section-map::before {
+  content: "V";
+  z-index: -1;
+  position: absolute;
+  top: 180px;
+  right: calc(50% + 555px);
+  transform: translateX(50%);
+  line-height: 1;
+  opacity: 0.02;
+  font-size: 400px;
+  font-family: "Playfair Display", serif;
 }
 
 .section-map__title {
@@ -434,4 +492,39 @@ a:hover {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   align-items: center;
+}
+
+.footer {
+  padding-top: 72px;
+  padding-bottom: 51px;
+  background-color: #2D343C;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer__logo {
+  margin-top: -12px;
+}
+
+.footer__nav-list {
+  display: grid;
+  gap: 15px;
+}
+
+.footer__address {
+  display: grid;
+  gap: 20px;
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 22px;
+       column-gap: 22px;
 }/*# sourceMappingURL=main.css.map */

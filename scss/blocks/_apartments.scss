@@ -1,13 +1,11 @@
-.section-map {
+.apartments {
 	position: relative;
-	padding: 180px 0;
 
 	&::before {
-		content: "V";
+		content: "III";
 
-		z-index: -1;
 		position: absolute;
-		top: 180px;
+		top: 0;
 		right: calc(50% + 555px);
 		transform: translateX(50%);
 		line-height: 1;
@@ -18,14 +16,13 @@
 	}
 }
 
-.section-map__title {
+.apartments__title {
 	margin-bottom: 88px;
 }
 
-.section-map__map {
-}
-
-.map {
-	height: 358px;
-	background-color: #626262;
+.apartments__cards {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	// grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+	gap: 30px;
 }
