@@ -4,6 +4,10 @@
 
 .feedback__title {
 	margin-bottom: 38px;
+
+	@include mediaTablet {
+		margin-bottom: 19px;
+	}
 }
 
 .feedback__form {
@@ -11,5 +15,9 @@
 	grid-template-columns: repeat(4, 1fr);
 	gap: 30px;
 	align-items: center;
+
+	@include mediaTablet {
+		grid-template-columns: 1fr;
+	}
 }
 
