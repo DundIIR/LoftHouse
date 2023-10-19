@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>LoftHouse</title>
 	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./libs/youtubeLightbox/youtubeLightbox.css">
 </head>
 <body>
 	<header class="header none1">
@@ -117,7 +118,7 @@
 					</div>
 					<form action="" class="cta__form form">
 						<input type="text" class="form__input" placeholder="Ваше имя" autocomplete="off">
-						<input type="text" class="form__input" placeholder="Ваш телефон" autocomplete="off">
+						<input type="text" class="form__input tel" placeholder="Ваш телефон" autocomplete="off">
 
 						<p class="form__privacy form__privacy--bottom">*Мы никому не передаем ваши данные. <br>И не сохраняем ваш номер в базу.</p>
 
@@ -130,7 +131,7 @@
 		<section class="video none1">
 			<div class="container">
 				<h2 class="visually-hidden">Видео про ЖК Loft House</h2>
-				<a href="#!" class="video__link">
+				<a href="https://www.youtube.com/watch?v=MOdDViZoBNQ" data-youtubeLightbox class="video__link">
 					<img src="./img/video/play-button.svg" alt="" class="video__icon">
 					<img src="./img/video/video-img.jpg" alt="" class="video__img">
 				</a>
@@ -157,7 +158,7 @@
 					<p class="form__privacy form__privacy--bottom">*Мы никому не передаем ваши данные. <br>И не сохраняем ваш номер в базу.</p>
 
 					<input type="text" class="form__input" placeholder="Ваше имя" autocomplete="off">
-					<input type="text" class="form__input" placeholder="Ваш телефон" autocomplete="off">
+					<input type="text" class="form__input tel" placeholder="Ваш телефон" maxlength="17">
 
 					<button type="submit" class="form__btn">Посмотреть район</button>
 				</form>
@@ -165,7 +166,7 @@
 		</section>
 	</main>
 
-	<footer class="footer none11">
+	<footer class="footer none1">
 		<div class="container">
 			<div class="footer__grid">
 				<div class="footer__logo">
@@ -213,6 +214,19 @@
 		</div>
 	</footer>
 
+	<div id="youtubelightbox" class="youtubelightbox">
+		<div class="youtubelightbox__centeredchild">
+				<div class="youtubelightbox__videowrapper">
+						<div id="youtubelightboxPlayer"></div>
+				</div>
+		</div>
+	</div>
+
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=371806a0-99da-4a7c-80b7-aee71b474e37&lang=ru_RU" type="text/javascript">
+	</script>
 	<script src="./js/main.js"></script>
+	<script src="./js/phoneMask.js"></script>
+	<script src="./libs/youtubeLightbox/youtubeLightbox.js"></script>
+
 </body>
 </html>

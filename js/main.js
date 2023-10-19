@@ -10,29 +10,39 @@ navBtn.onclick = function() {
 	document.body.classList.toggle('no-scroll');
 }
 
-// var scroll_position = 0;
-// var scroll_top = 0;
+// Yandex Map
 
-// $(window).on("mousewheel DOMMouseScroll", function(e) {
+// Функция ymaps.ready() будет вызвана, когда
+// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+ymaps.ready(init);
+function init(){
+		// Создание карты.
+		var myMap = new ymaps.Map("map", {
+				// Координаты центра карты.
+				// Порядок по умолчанию: «широта, долгота».
+				// Чтобы не определять координаты центра карты вручную,
+				// воспользуйтесь инструментом Определение координат.
+				center: [59.94356453020145,30.338917271163496],
+				// Уровень масштабирования. Допустимые значения:
+				// от 0 (весь мир) до 19.
+				zoom: 16
+		}),
+		myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+			hintContent: 'Собственный значок метки',
+			balloonContent: 'Это красивая метка'
+		}, {
+			// Опции.
+			// Необходимо указать данный тип макета.
+			iconLayout: 'default#image',
+			// Своё изображение иконки метки.
+			iconImageHref: './img/socials/vk.svg',
+			// Размеры метки.
+			iconImageSize: [50, 50],
+			// Смещение левого верхнего угла иконки относительно
+			// её "ножки" (точки привязки).
+			iconImageOffset: [-5, -38]
+		});
 
-// 	var target = $(this).scrollTop();
-
-// 	if(parseInt(e.originalEvent.wheelDelta || -e.originalEvent.detail) >= 0) {
-
-// 		if((scroll_position - target) > 200) {
-
-// 			$(".activereadsettings").removeClass("displaynone");
-
-// 			scroll_position = 0;
-
-// 		}
-
-// 	} else {
-
-// 		$(".activereadsettings").addClass("displaynone");
-
-// 		scroll_position = target;
-
-// 	}
-
-// });
+		myMap.geoObjects
+        .add(myPlacemark);
+}
