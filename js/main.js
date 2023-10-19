@@ -28,20 +28,31 @@ function init(){
 				zoom: 16
 		}),
 		myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-			hintContent: 'Собственный значок метки',
-			balloonContent: 'Это красивая метка'
+			hintContent: 'Наб. реки Фонтанки 10-15',
+			// balloonContent: 'Баллун'
 		}, {
 			// Опции.
 			// Необходимо указать данный тип макета.
 			iconLayout: 'default#image',
 			// Своё изображение иконки метки.
-			iconImageHref: './img/socials/vk.svg',
+			iconImageHref: './img/map/map-icon.svg',
 			// Размеры метки.
-			iconImageSize: [50, 50],
+			iconImageSize: [27, 37],
 			// Смещение левого верхнего угла иконки относительно
 			// её "ножки" (точки привязки).
-			iconImageOffset: [-5, -38]
+			iconImageOffset: [-13.5, -37]
 		});
+
+		myMap.controls.remove('geolocationControl'); // удаляем геолокацию
+		myMap.controls.remove('searchControl'); // удаляем поиск
+		myMap.controls.remove('trafficControl'); // удаляем контроль трафика
+		myMap.controls.remove('typeSelector'); // удаляем тип
+	
+		// myMap.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+		// myMap.controls.remove('zoomControl'); // удаляем контрол зуммирования
+		myMap.controls.remove('rulerControl'); // удаляем контрол правил
+		myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+	
 
 		myMap.geoObjects
         .add(myPlacemark);
