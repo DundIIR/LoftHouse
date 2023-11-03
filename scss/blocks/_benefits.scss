@@ -10,6 +10,10 @@
 
 		@include decorNumber;
 	}
+
+	@include mediaTablet {
+		padding: 60px 0;
+	}
 }
 
 .benefits__row {

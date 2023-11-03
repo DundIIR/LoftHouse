@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 
 		if(input.value.length != selectionStart) {
-			console.log(e)
 			if(e.data && /\D/g.test(e.data)){
-				console.log(inputNumbersValue);
 				input.value = inputNumbersValue;
+			} else if (inputNumbersValue.length > 11) {
+				input.value = (input.value.slice(0, selectionStart-1) + input.value.slice(selectionStart)).replace(/\D/g, "");
 			}
 			return;
 		}

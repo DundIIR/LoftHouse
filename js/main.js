@@ -1,3 +1,7 @@
+// Создание главного плагина 
+const $ = {};
+window.$ = $;
+
 // Header nav
 
 const navBtn = document.querySelector('.nav-icon-btn'),

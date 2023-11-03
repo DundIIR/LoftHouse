@@ -382,6 +382,11 @@ a:hover {
   font-size: 400px;
   font-family: "Playfair Display", serif;
 }
+@media screen and (max-width: 959px) {
+  .benefits {
+    padding: 60px 0;
+  }
+}
 
 .benefits__row {
   display: flex;
@@ -692,7 +697,7 @@ a:hover {
 }
 @media screen and (max-width: 959px) {
   .section-map {
-    padding: 90px 0;
+    padding: 90px 0 120px;
   }
 }
 
@@ -734,6 +739,11 @@ a:hover {
 .feedback {
   padding-bottom: 180px;
 }
+@media screen and (max-width: 959px) {
+  .feedback {
+    padding-bottom: 120px;
+  }
+}
 
 .feedback__title {
   margin-bottom: 38px;
@@ -741,18 +751,6 @@ a:hover {
 @media screen and (max-width: 959px) {
   .feedback__title {
     margin-bottom: 19px;
-  }
-}
-
-.feedback__form {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  align-items: center;
-}
-@media screen and (max-width: 959px) {
-  .feedback__form {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -801,4 +799,42 @@ a:hover {
   align-items: center;
   -moz-column-gap: 22px;
        column-gap: 22px;
+}
+
+.modal {
+  display: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-window {
+  width: 500px;
+  height: 300px;
+  border-radius: 30px;
+  background-color: #242B33;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 3px 5px;
+}
+
+.modal__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }/*# sourceMappingURL=main.css.map */

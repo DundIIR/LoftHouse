@@ -1,0 +1,41 @@
+.modal {
+	display: none;
+}
+.modal-overlay {
+	position: fixed;
+	z-index: 10000;
+	inset: 0;
+	background-color: rgba($color: #000, $alpha: 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-window {
+	width: 500px;
+	height: 300px;
+	border-radius: 30px;
+	background-color: $dark;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 30px;
+}
+
+.modal__header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 15px;
+	padding: 3px 5px;
+}
+
+.modal__form {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	
+	// grid-template-columns: repeat(4, 1fr);
+	// @include mediaTablet {
+	// 	grid-template-columns: 1fr;
+	// }
+}

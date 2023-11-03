@@ -118,7 +118,7 @@
 					</div>
 					<form action="" class="cta__form form">
 						<input type="text" class="form__input" placeholder="Ваше имя" autocomplete="off">
-						<input type="text" class="form__input tel" placeholder="Ваш телефон" autocomplete="off">
+						<input type="text" class="form__input tel" placeholder="Ваш телефон" autocomplete="off" maxlength="18">
 
 						<p class="form__privacy form__privacy--bottom">*Мы никому не передаем ваши данные. <br>И не сохраняем ваш номер в базу.</p>
 
@@ -154,14 +154,15 @@
 				<div class="feedback__title">
 					<h2 class="title-2">Есть вопросы?</h2>
 				</div>
-				<form class="feedback__form form">
+
+				<!-- <form class="feedback__form form">
 					<p class="form__privacy form__privacy--bottom">*Мы никому не передаем ваши данные. <br>И не сохраняем ваш номер в базу.</p>
 
 					<input type="text" class="form__input" placeholder="Ваше имя" autocomplete="off">
-					<input type="text" class="form__input tel" placeholder="Ваш телефон" maxlength="17">
+					<input type="text" class="form__input tel" placeholder="Ваш телефон" autocomplete="off" maxlength="18">
 
 					<button type="submit" class="form__btn">Посмотреть район</button>
-				</form>
+				</form> -->
 			</div>
 		</section>
 	</main>
@@ -222,9 +223,29 @@
 		</div>
 	</div>
 
+	<div class="modal">
+		<div class="modal-overlay">
+			<div class="modal-window">
+				<div class="modal__header">
+					<p class="modal__header-title">Обратная связь</p>
+					<div class="modal-close">x</div>
+				</div>
+				<form class="modal__form form">
+					<p class="form__privacy form__privacy--bottom">*Мы никому не передаем ваши данные. <br>И не сохраняем ваш номер в базу.</p>
+	
+					<input type="text" class="form__input" placeholder="Ваше имя" autocomplete="off">
+					<input type="text" class="form__input tel" placeholder="Ваш телефон" autocomplete="off" maxlength="18">
+	
+					<button type="submit" class="form__btn">Посмотреть район</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=371806a0-99da-4a7c-80b7-aee71b474e37&lang=ru_RU" type="text/javascript">
 	</script>
 	<script src="./js/main.js"></script>
+	<script src="./js/modal.js"></script>
 	<script src="./js/phoneMask.js"></script>
 	<script src="./libs/youtubeLightbox/youtubeLightbox.js"></script>
 
