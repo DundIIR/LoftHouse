@@ -1,6 +1,16 @@
 // Создание главного плагина 
 const $ = {};
-window.$ = $;
+
+
+
+// Like Card
+const likeCard = document.querySelector('.apartments__cards')
+likeCard.addEventListener('click', event => {
+	var btnLike = event.target.closest('.card__like');
+	if (btnLike) {
+			btnLike.classList.toggle('active-like');
+	}
+})
 
 // Header nav
 

@@ -20,16 +20,18 @@
 }
 
 .cta__title {
-	margin-bottom: 17px;
+	margin-bottom: 20px;
 }
 
 .cta__wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 30px;
+	gap: 50px;
+	padding: 0 20px;
 
 	@include mediaTablet {
 		grid-template-columns: 1fr;
+		gap: 20px;
 	}
 }
 
@@ -44,12 +46,17 @@
 		font-size: 14px;
 	}
 }
-.cta__form {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 35px 30px;
 
-	@include mediaTablet {
-		grid-template-columns: 1fr;
-	}
+// .cta__form {
+// 	display: grid;
+// 	grid-template-columns: 1fr 1fr;
+// 	gap: 35px 30px;
+
+// 	@include mediaTablet {
+// 		grid-template-columns: 1fr;
+// 	}
+// }
+
+.cta__btn {
+	margin: auto 0;
 }

@@ -515,7 +515,7 @@ a:hover {
   position: absolute;
   z-index: 10;
   left: 50px;
-  right: 20px;
+  right: 83px;
   bottom: 44px;
   font-size: 24px;
 }
@@ -525,6 +525,39 @@ a:hover {
     left: 30px;
     bottom: 30px;
   }
+}
+
+.card__like {
+  position: absolute;
+  z-index: 10;
+  right: 46px;
+  bottom: 40px;
+  padding: 11px;
+  height: 37px;
+  width: 37px;
+  stroke: #fff;
+  fill: none;
+  transform: scale(1.2);
+  transition: transform 0.1s ease-in;
+}
+.card__like:hover {
+  transform: scale(1.5);
+}
+@media screen and (max-width: 959px) {
+  .card__like {
+    transform: scale(1);
+    right: 30px;
+    bottom: 22px;
+  }
+  .card__like:hover {
+    transform: scale(1.2);
+  }
+}
+
+.active-like {
+  transform: scale(1.4);
+  stroke: #D4C17F;
+  fill: #D4C17F;
 }
 
 .cta {
@@ -538,17 +571,19 @@ a:hover {
 }
 
 .cta__title {
-  margin-bottom: 17px;
+  margin-bottom: 20px;
 }
 
 .cta__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 50px;
+  padding: 0 20px;
 }
 @media screen and (max-width: 959px) {
   .cta__wrapper {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
@@ -564,21 +599,15 @@ a:hover {
   }
 }
 
-.cta__form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px 30px;
-}
-@media screen and (max-width: 959px) {
-  .cta__form {
-    grid-template-columns: 1fr;
-  }
+.cta__btn {
+  margin: auto 0;
 }
 
 .form__input {
   height: 50px;
   padding: 12px;
   text-align: center;
+  border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
   font-size: 14px;
@@ -599,16 +628,18 @@ a:hover {
   line-height: 1.23;
   color: #e7e7e7;
   text-align: center;
+  grid-row: 4/5;
 }
-@media screen and (max-width: 959px) {
-  .form__privacy--bottom {
-    grid-row: 4/5;
+@media screen and (max-width: 540px) {
+  .form__privacy {
+    font-size: 12px;
   }
 }
 
-.form__btn {
+.form__btn, #btn-open {
   height: 50px;
   padding: 12px;
+  border-radius: 3px;
   font-size: 16px;
   color: #fff;
   font-weight: 700;
@@ -616,7 +647,7 @@ a:hover {
   background-color: #D4C17F;
   transition: background-color 0.2s ease-in;
 }
-.form__btn:hover {
+.form__btn:hover, #btn-open:hover {
   background-color: #ddc676;
 }
 
@@ -754,6 +785,10 @@ a:hover {
   }
 }
 
+.feedback__btn {
+  padding: 40px;
+}
+
 .footer {
   padding-top: 72px;
   padding-bottom: 51px;
@@ -801,40 +836,78 @@ a:hover {
        column-gap: 22px;
 }
 
-.modal {
-  display: none;
+.modal.open .modal-overlay, .modal.open .modal-window {
+  opacity: 1;
+  z-index: 10000;
+}
+.modal.open .modal-window {
+  transform: translateY(80%);
+}
+.modal.open .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal.hide .modal-overlay, .modal.hide .modal-window {
+  opacity: 1;
+  z-index: 10000;
+}
+.modal.hide .modal-window {
+  transform: translateY(-100%);
+}
+.modal.hide .modal-overlay {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .modal-overlay {
   position: fixed;
-  z-index: 10000;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  z-index: -1;
+  transition: background-color 0.2s ease-in;
 }
 
 .modal-window {
   width: 500px;
   height: 300px;
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: #242B33;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 30px;
+  margin: 0 auto;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease-in;
+  opacity: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 540px) {
+  .modal-window {
+    margin: 0 20px;
+    height: auto;
+    width: auto;
+    padding: 20px;
+  }
 }
 
 .modal__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 15px;
   padding: 3px 5px;
+  font-family: "Playfair Display", serif;
 }
 
 .modal__form {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
+}
+
+.modal__header-close {
+  cursor: pointer;
+  padding: 7px;
+  font-size: 26px;
+  line-height: 20px;
 }/*# sourceMappingURL=main.css.map */
